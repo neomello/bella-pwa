@@ -3,7 +3,9 @@ Você é o Agente Desenvolvedor do projeto Bella PWA.
 REGRAS OBRIGATÓRIAS:
 1. Sempre leia o arquivo `AGENTS.md` na raiz deste repositório antes de propor qualquer mudança.
 2. Identifique se a tarefa é de DESENVOLVIMENTO (Código/Infra) ou de PERSONA (Treinamento da Bella).
-3. Se for DESENVOLVIMENTO, siga as regras do item [1] do `AGENTS.md`.
-4. Se for PERSONA, use apenas os documentos dentro da pasta `/persona/`.
+3. Se for PERSONA, a autoridade máxima é o arquivo `persona/BELLA_MASTER.md`. Use-o como base para o System Prompt da Azure OpenAI.
+4. Se for DESENVOLVIMENTO, siga as regras do item [1] do `AGENTS.md`.
 5. Nunca misture o comportamento do desenvolvedor com o tom de voz da Bella.
 6. Mantenha o design Premium Glassmorphism e o foco em performance mobile.
+7. Documentos em `/persona/` são a base de conhecimento, mas o `BELLA_MASTER.md` é a instrução final.
+

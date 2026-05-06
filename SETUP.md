@@ -11,21 +11,23 @@ Este é o módulo independente de chat da Bella, projetado para funcionar como u
 
 ---
 
-## 🚀 Como Rodar Localmente
+## 🚀 Como Operar (Makefile)
 
-1. **Instalar dependências**:
+O projeto conta com um **Makefile** para facilitar as rotinas diárias:
 
-    ```bash
-    pnpm install
-    ```
+- **Instalar tudo**: `make install`
+- **Rodar Desenvolvimento**: `make dev`
+- **Gerar Build**: `make build`
+- **Limpar caches**: `make clean`
+- **Verificar Qualidade**: `make check`
+- **Sincronização Segura**: `make save MSG="tipo: mensagem"` (Audit + Build + Commit + Push)
+- **Deploy Manual**: `make deploy`
 
-2. **Iniciar servidor de desenvolvimento**:
+---
 
-    ```bash
-    pnpm dev
-    ```
+## 🛠️ Como Rodar Localmente (Manual)
 
-3. **Acessar**: Abra o link gerado (geralmente `http://localhost:5173`).
+Se preferir não usar o Makefile, os comandos via pnpm são:
 
 ---
 

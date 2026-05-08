@@ -4,9 +4,7 @@ const app = document.querySelector('#app')
 
 // Lógica de Persistência
 const STORAGE_KEY = 'bella_chat_history'
-let chatHistory = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [
-  { text: "Olá! 👋 Eu sou a Bella. Estou aqui para te ajudar a encontrar o curso ideal e transformar sua carreira na beleza. Como posso te ajudar hoje?", isUser: false, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }
-]
+let chatHistory = JSON.parse(localStorage.getItem(STORAGE_KEY)) || []
 
 function saveHistory() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(chatHistory))
@@ -115,17 +113,11 @@ if (window.visualViewport) {
   })
 }
 
-// Clear chat — resets to initial greeting with fresh timestamp
+// Clear chat — resets to empty chat
 document.querySelector('#clear-btn').addEventListener('click', () => {
-  const greeting = {
-    text: "Olá! 👋 Eu sou a Bella. Estou aqui para te ajudar a encontrar o curso ideal e transformar sua carreira na beleza. Como posso te ajudar hoje?",
-    isUser: false,
-    time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-  }
-  chatHistory = [greeting]
+  chatHistory = []
   saveHistory()
   chatBox.innerHTML = ''
-  renderMessage(greeting)
 })
 
 function addTypingIndicator() {

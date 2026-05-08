@@ -3,7 +3,7 @@ import './style.css'
 const app = document.querySelector('#app')
 
 // Lógica de Persistência
-const STORAGE_KEY = 'bella_chat_history'
+const STORAGE_KEY = 'bella_chat_history_v2'
 let chatHistory = JSON.parse(localStorage.getItem(STORAGE_KEY)) || []
 
 function saveHistory() {

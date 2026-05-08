@@ -173,7 +173,10 @@ body::before {
 .chat-container {
   flex: 1;
   overflow-y: auto;
-  padding: 1.5rem 1.5rem 100px; /* Espaço generoso para o input absoluto */
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+  overscroll-behavior-y: contain;
+  padding: 1.5rem 1.5rem 100px;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;

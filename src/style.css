@@ -195,7 +195,7 @@ body::before {
   background-image: url("/PEACEEEEE.jpeg");
   background-size: cover;
   background-position: center;
-  opacity: 0.12;
+  opacity: 0.35;
   pointer-events: none;
   z-index: -1;
 }

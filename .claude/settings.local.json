@@ -9,7 +9,9 @@
       "Read(//Users/nettomello/CODIGOS/**)",
       "Read(//Users/nettomello/CODIGOS/projects/**)",
       "Bash(railway logs *)",
-      "Bash(convert /Users/nettomello/CODIGOS/projects/bella-pwa/src/assets/bela_transp.png -resize 400x400\\\\> -quality 85 /Users/nettomello/CODIGOS/projects/bella-pwa/src/assets/bela_transp_opt.png)"
+      "Bash(convert /Users/nettomello/CODIGOS/projects/bella-pwa/src/assets/bela_transp.png -resize 400x400\\\\> -quality 85 /Users/nettomello/CODIGOS/projects/bella-pwa/src/assets/bela_transp_opt.png)",
+      "Bash(magick /Users/nettomello/CODIGOS/projects/bella-pwa/public/bella/bella-front.png -resize 200x200^ -gravity center -extent 200x200 -quality 85 /Users/nettomello/CODIGOS/projects/bella-pwa/public/bella/bella-front.png)",
+      "Bash(railway up *)"
     ]
   }
 }

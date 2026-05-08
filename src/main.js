@@ -16,7 +16,7 @@ app.innerHTML = `
   <header class="header">
     <div class="header-bottom">
       <div class="avatar-container">
-        <div class="avatar-initials">B</div>
+        <img src="/bella/bella-front.png" alt="Bella" class="avatar-img">
       </div>
       <div class="header-info">
         <h1>Bella</h1>

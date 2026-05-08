@@ -31,7 +31,7 @@ Função : Registrar decisões fixas
 ┃ CRM                   PostgreSQL no Railway
 ┃ Memória latente       Redis no Railway (futuro)
 ┃ Inteligência (LLM)    Azure OpenAI
-┃ Autoridade Persona    persona/BELLA_MASTER.md
+┃ Autoridade Persona    persona/BELLA_SYSTEM_PROMPT.md
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ```

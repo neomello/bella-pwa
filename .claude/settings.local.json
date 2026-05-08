@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /Users/nettomello/CODIGOS/projects/embelleze-trdd -type f | grep -v node_modules | grep -v .git | grep -v .astro | sort)"
+    ]
+  }
+}

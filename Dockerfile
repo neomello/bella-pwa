@@ -6,8 +6,12 @@ RUN pnpm install
 RUN pnpm run build
 
 FROM node:22-slim AS runtime
+RUN corepack enable
 WORKDIR /app
-RUN npm install -g serve
 COPY --from=build /app/dist ./dist
-EXPOSE 8080
-CMD ["serve", "-s", "dist", "-l", "8080"]
+COPY --from=build /app/persona ./persona
+COPY --from=build /app/server.js ./server.js
+COPY --from=build /app/package.json ./package.json
+RUN pnpm install --prod
+EXPOSE 3000
+CMD ["node", "server.js"]

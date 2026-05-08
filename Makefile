@@ -4,7 +4,7 @@
 # Version: 1.0.0 (SDR Sovereign Edition)
 # ========================================
 
-.PHONY: help install dev build clean check audit push save
+.PHONY: help install dev start build clean check audit push save
 
 # --- CONFIGURATION ---
 PNPM = pnpm
@@ -29,6 +29,7 @@ help:
 	@echo ""
 	@echo "$(BOLD)2. DEVELOPMENT$(RESET)"
 	@echo "  dev           Inicia servidor de desenvolvimento Vite"
+	@echo "  start         Roda servidor Express local (requer build)"
 	@echo "  clean         Remove artefatos de build e caches"
 	@echo ""
 	@echo "$(BOLD)3. QUALITY & SECURITY$(RESET)"
@@ -53,6 +54,10 @@ install:
 dev:
 	@echo "$(CYAN)[START] Launching $(PROJECT_NAME) Dev Server...$(RESET)"
 	@$(PNPM) --filter . dev
+
+start: build
+	@echo "$(CYAN)[START] Running Express server locally...$(RESET)"
+	@node server.js
 
 clean:
 	@echo "$(CYAN)[CLEAN] Removing artifacts and local cache...$(RESET)"

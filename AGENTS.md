@@ -4,32 +4,130 @@
 ========================================
    BELLA PWA · AGENTS & PROTOCOLS
 ========================================
+Escopo : Workspace root
+Função : Protocolo para agentes de IA
+========================================
 ```
 
-## ⟠ [1] PARA O DESENVOLVEDOR (VOCÊ)
-*Instruções para o Agente de IA que está editando este código.*
+## ⟠ [1] DESENVOLVEDOR
 
-1. **Seu Papel**: Você é o engenheiro de software. Sua missão é manter o PWA rápido, estável e com design premium.
-2. **Arquitetura**: Este é um projeto Vite + Vanilla JS. Não adicione frameworks pesados sem necessidade.
-3. **Leitura Obrigatória**:
-    - `CONTEXT.md` (Visão do negócio)
-    - `ROADMAP.md` (Status do projeto)
-    - `SETUP.md` (Comandos técnicos)
-    - `MEMORY.md` (Decisões fixas)
+*Agente que edita código e infraestrutura.*
+
+Papel: engenheiro de software.
+Manter o PWA rápido, estável e com design premium.
+Não adicionar frameworks pesados sem necessidade.
+Stack: Vite + Vanilla JS.
+
+Leitura obrigatória antes de qualquer mudança:
+
+```text
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+┃ ARQUIVO           FINALIDADE
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+┃ CONTEXT.md        Visão do negócio
+┃ ROADMAP.md        Status do projeto
+┃ SETUP.md          Comandos técnicos
+┃ MEMORY.md         Decisões fixas
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
 
 ────────────────────────────────────────
 
-## ⟠ [2] PARA A BELLA (A PERSONA)
-*Instruções e conhecimento que devem ser injetados no LLM da Bella.*
+## ⟠ [2] PERSONA DA BELLA
 
-1. **Papel da Bella**: Ela é a Consultora SDR. O comportamento dela não deve ser confundido com o comportamento do desenvolvedor.
-2. **Documentos da Persona**:
-    - `persona/BELLA_PERSONA.md` (O "quem eu sou" da IA)
-    - `persona/SDR_STRATEGY.md` (O "como eu vendo" da IA)
-    - `persona/LANDING_OFFERS.md` (O "o que eu sei sobre o site")
-    - `persona/bella.knowledge.md` (A base técnica de cursos)
+*Agente que configura ou treina o LLM da Bella.*
+
+Papel: Consultora SDR.
+Não confundir com o papel do desenvolvedor.
+
+**Fonte única de verdade — Azure OpenAI System Message:**
+
+```text
+▓▓▓ ARQUIVO AUTORIDADE
+────────────────────────────────────────
+└─ persona/BELLA_SYSTEM_PROMPT.md
+```
+
+Consolida: identidade, tom de voz, fluxo SDR,
+catálogo de cursos, objeções, regras e dados da unidade.
+
+Qualquer atualização de instrução da Bella:
+SOMENTE neste arquivo.
 
 ────────────────────────────────────────
 
-## ⨷ REGRA DE OURO
-**Nunca** misture as instruções. Se você está desenvolvendo, siga o item [1]. Se você está configurando o prompt da IA, use o item [2] como base de conhecimento.
+## ⧉ Arquivos de Referência
+
+*Histórico e manutenção. NÃO injetar como prompt.*
+
+```text
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+┃ ARQUIVO                     STATUS
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+┃ persona/BELLA_MASTER.md      obsoleto
+┃ persona/BELLA_PERSONA.md     consolidado
+┃ persona/SDR_STRATEGY.md      consolidado
+┃ persona/LANDING_OFFERS.md    consolidado
+┃ persona/bella.knowledge.md   consolidado
+┃ src/content/bella.knowledge  duplicata
+┃ persona/courses.json         dados estruturados
+┃ persona/faqs.json            perguntas frequentes
+┃ persona/offers.json          oferta ativa
+┃ persona/testimonials.json    sem conteúdo aprovado
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+────────────────────────────────────────
+
+## ⨷ Regra de Ouro
+
+Nunca misture as instruções.
+Desenvolvendo: siga o item [1].
+Configurando o prompt da IA: use somente
+`persona/BELLA_SYSTEM_PROMPT.md`.
+
+────────────────────────────────────────
+
+## ◬ Dados Pendentes — Não Preencher sem Confirmação
+
+```text
+▓▓▓ AGUARDANDO RESPONSÁVEL DA UNIDADE
+────────────────────────────────────────
+└─ Preços por curso (price: null em courses.json)
+└─ Taxa de inscrição
+└─ Datas das próximas turmas
+└─ Condições de pagamento
+└─ Regras de reserva via PIX
+```
+
+Quando confirmados, atualizar nos dois projetos:
+
+```text
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+┃ PROJETO           ARQUIVO
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+┃ bella-pwa         persona/courses.json
+┃ embelleze-trdd    embelleze-landing/src/
+┃                   content/courses.json
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+Não inventar valores. Não usar estimativas.
+O system prompt da Bella já tem respostas
+de contorno para cada um desses itens.
+
+────────────────────────────────────────
+
+```text
+▓▓▓ NΞØ MELLØ
+────────────────────────────────────────
+Core Architect · NΞØ Protocol
+neo@neoprotocol.space
+
+"Code is law. Expand until
+chaos becomes protocol."
+
+Security by design.
+Exploits find no refuge here.
+────────────────────────────────────────
+```

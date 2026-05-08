@@ -62,6 +62,6 @@ nova oportunidade profissional.
   - Infraestrutura Railway via Docker (Node 22 / pnpm v10).
   - Tracking e Resiliência de dados validados.
 - **Fase 2 (Bella SDR)**: 🔄 Em execução.
-  - BELLA MASTER definida (System Prompt para Azure OpenAI).
+  - System Prompt consolidado em `persona/BELLA_SYSTEM_PROMPT.md` (única fonte de verdade para Azure OpenAI).
   - Conexão do agente inteligente com a tabela de leads e WhatsApp em progresso.
 

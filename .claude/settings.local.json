@@ -1,7 +1,15 @@
 {
   "permissions": {
     "allow": [
-      "Bash(find /Users/nettomello/CODIGOS/projects/embelleze-trdd -type f | grep -v node_modules | grep -v .git | grep -v .astro | sort)"
+      "Bash(find /Users/nettomello/CODIGOS/projects/embelleze-trdd -type f | grep -v node_modules | grep -v .git | grep -v .astro | sort)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(pnpm install *)",
+      "Read(//Users/nettomello/CODIGOS/**)",
+      "Read(//Users/nettomello/CODIGOS/projects/**)",
+      "Bash(railway logs *)",
+      "Bash(convert /Users/nettomello/CODIGOS/projects/bella-pwa/src/assets/bela_transp.png -resize 400x400\\\\> -quality 85 /Users/nettomello/CODIGOS/projects/bella-pwa/src/assets/bela_transp_opt.png)"
     ]
   }
 }

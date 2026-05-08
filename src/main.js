@@ -1,5 +1,4 @@
 import './style.css'
-import bellaImg from './assets/bela_transp.png'
 
 const app = document.querySelector('#app')
 
@@ -17,7 +16,7 @@ app.innerHTML = `
   <header class="header">
     <div class="header-bottom">
       <div class="avatar-container">
-        <img src="${bellaImg}" alt="Bella" class="avatar-img">
+        <div class="avatar-initials">B</div>
       </div>
       <div class="header-info">
         <h1>Bella</h1>

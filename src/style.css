@@ -137,11 +137,17 @@ body::before {
   box-shadow: 0 4px 12px rgba(222, 88, 61, 0.3);
 }
 
-.avatar-img {
+.avatar-initials {
   width: 100%;
   height: 100%;
   border-radius: 12px;
-  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, var(--color-orange), var(--color-pink));
 }
 
 .header-info h1 {

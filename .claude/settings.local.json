@@ -13,7 +13,8 @@
       "Bash(magick /Users/nettomello/CODIGOS/projects/bella-pwa/public/bella/bella-front.png -resize 200x200^ -gravity center -extent 200x200 -quality 85 /Users/nettomello/CODIGOS/projects/bella-pwa/public/bella/bella-front.png)",
       "Bash(railway up *)",
       "mcp__plugin_playwright_playwright__browser_navigate",
-      "mcp__plugin_playwright_playwright__browser_take_screenshot"
+      "mcp__plugin_playwright_playwright__browser_take_screenshot",
+      "Bash(pnpm audit *)"
     ]
   }
 }

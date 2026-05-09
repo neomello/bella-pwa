@@ -1,0 +1,27 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - img "Instituto Embelleze"
+  - button "Bella Falar com a Bella" [ref=e5] [cursor=pointer]:
+    - img "Bella" [ref=e6]
+    - generic [ref=e7]: Falar com a Bella
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - img "Bella"
+        - generic:
+          - heading "Bella" [level=1]
+          - generic: Consultora de Carreira
+        - button "Limpar conversa"
+        - button "Fechar":
+          - generic:
+            - img
+      - generic:
+        - generic:
+          - textbox "Escreva sua mensagem..."
+          - button
+        - contentinfo:
+          - img "Instituto Embelleze"
+          - generic:
+            - paragraph: Instituto da Beleza Goiana de Ensino e Serviços LTDA
+            - paragraph: "CNPJ: 19.367.067/0001-97"

@@ -2,7 +2,6 @@ import './style.css'
 
 const app = document.querySelector('#app')
 
-// Lógica de Persistência
 const STORAGE_KEY = 'bella_chat_history_v2'
 let chatHistory = JSON.parse(localStorage.getItem(STORAGE_KEY)) || []
 
@@ -11,52 +10,76 @@ function saveHistory() {
 }
 
 app.innerHTML = `
-  <header class="header">
-    <div class="header-bottom">
-      <div class="avatar-container">
-        <img src="/bella/bella-front.png" alt="Bella" class="avatar-img">
+  <div class="home-screen">
+    <div class="home-bg"></div>
+    <img src="/brand/logo_cor_horizontal.png" alt="Instituto Embelleze" class="home-watermark">
+  </div>
+
+  <button class="fab" id="fab">
+    <img src="/bella/bella-front.png" alt="Bella" class="fab-img">
+    <span class="fab-label">Falar com a Bella</span>
+  </button>
+
+  <div class="chat-overlay" id="chat-overlay">
+    <div class="chat-sheet">
+      <div class="sheet-header">
+        <div class="sheet-avatar-wrap">
+          <img src="/bella/bella-front.png" alt="Bella" class="avatar-img">
+        </div>
+        <div class="header-info">
+          <h1>Bella</h1>
+          <div class="status">Consultora de Carreira</div>
+        </div>
+        <button class="clear-btn" id="clear-btn" title="Limpar conversa">
+          <iconify-icon icon="ph:trash-simple"></iconify-icon>
+        </button>
+        <button class="close-btn" id="close-btn" title="Fechar">
+          <iconify-icon icon="ph:x-bold"></iconify-icon>
+        </button>
       </div>
-      <div class="header-info">
-        <h1>Bella</h1>
-        <div class="status">Consultora de Carreira</div>
+
+      <div class="chat-container" id="chat-box"></div>
+
+      <div class="input-area">
+        <form class="input-container" id="chat-form">
+          <input type="text" id="user-input" placeholder="Escreva sua mensagem..." autocomplete="off">
+          <button type="submit" class="send-btn">
+            <iconify-icon icon="ph:paper-plane-right-fill"></iconify-icon>
+          </button>
+        </form>
+        <footer class="footer">
+          <img src="/brand/logo_cor_horizontal.png" alt="Instituto Embelleze" class="footer-logo">
+          <div class="footer-info">
+            <p>Instituto da Beleza Goiana de Ensino e Serviços LTDA</p>
+            <p>CNPJ: 19.367.067/0001-97</p>
+          </div>
+        </footer>
       </div>
-      <button class="clear-btn" id="clear-btn" title="Limpar conversa">
-        <iconify-icon icon="ph:trash-simple"></iconify-icon>
-      </button>
     </div>
-  </header>
-
-  <div class="chat-container" id="chat-box"></div>
-
-  <div class="input-area">
-    <form class="input-container" id="chat-form">
-      <input type="text" id="user-input" placeholder="Escreva sua mensagem..." autocomplete="off">
-      <button type="submit" class="send-btn">
-        <iconify-icon icon="ph:paper-plane-right-fill"></iconify-icon>
-      </button>
-    </form>
-    <footer class="footer">
-      <img src="/brand/logo_cor_horizontal.png" alt="Instituto Embelleze" class="footer-logo">
-      <div class="footer-info">
-        <p>Instituto da Beleza Goiana de Ensino e Serviços LTDA</p>
-        <p>CNPJ: 19.367.067/0001-97</p>
-      </div>
-    </footer>
   </div>
 `
 
+const chatBox    = document.querySelector('#chat-box')
+const chatForm   = document.querySelector('#chat-form')
+const userInput  = document.querySelector('#user-input')
+const overlay    = document.querySelector('#chat-overlay')
+const fab        = document.querySelector('#fab')
 
-const chatBox = document.querySelector('#chat-box')
-const chatForm = document.querySelector('#chat-form')
-const userInput = document.querySelector('#user-input')
+// Open / close overlay
+fab.addEventListener('click', () => {
+  overlay.classList.add('open')
+  setTimeout(() => userInput.focus(), 300)
+})
+
+document.querySelector('#close-btn').addEventListener('click', () => {
+  overlay.classList.remove('open')
+  userInput.blur()
+})
 
 function renderMessage(msg) {
   const msgDiv = document.createElement('div')
   msgDiv.className = `message ${msg.isUser ? 'message-user' : 'message-bella'}`
-  msgDiv.innerHTML = `
-    ${msg.text}
-    <span class="time">${msg.time}</span>
-  `
+  msgDiv.innerHTML = `${msg.text}<span class="time">${msg.time}</span>`
   chatBox.appendChild(msgDiv)
   chatBox.scrollTop = chatBox.scrollHeight
 }
@@ -69,7 +92,6 @@ function addMessage(text, isUser = false) {
   saveHistory()
 }
 
-// Carregar histórico inicial
 chatHistory.forEach(renderMessage)
 
 chatForm.addEventListener('submit', async (e) => {
@@ -103,17 +125,6 @@ chatForm.addEventListener('submit', async (e) => {
   }
 })
 
-// Keyboard viewport compensation — prevents layout jump on mobile
-if (window.visualViewport) {
-  window.visualViewport.addEventListener('resize', () => {
-    const offset = Math.max(0, window.innerHeight - window.visualViewport.height)
-    document.documentElement.style.setProperty('--keyboard-inset', `${offset}px`)
-    document.body.classList.toggle('keyboard-open', offset > 80)
-    if (offset < 80) chatBox.scrollTop = chatBox.scrollHeight
-  })
-}
-
-// Clear chat — resets to empty chat
 document.querySelector('#clear-btn').addEventListener('click', () => {
   chatHistory = []
   saveHistory()
@@ -132,4 +143,3 @@ function addTypingIndicator() {
 function removeTypingIndicator(el) {
   el?.remove()
 }
-

@@ -1,0 +1,19 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - img "Bella" [ref=e6]
+      - generic [ref=e7]:
+        - heading "Bella" [level=1] [ref=e8]
+        - generic [ref=e9]: Consultora de Carreira
+      - button "Limpar conversa" [ref=e10] [cursor=pointer]:
+        - img [ref=e12]
+  - generic [ref=e15]:
+    - generic [ref=e16]:
+      - textbox "Escreva sua mensagem..." [ref=e17]
+      - button [ref=e18] [cursor=pointer]:
+        - img [ref=e20]
+    - contentinfo [ref=e22]:
+      - img "Instituto Embelleze" [ref=e23]
+      - generic [ref=e24]:
+        - paragraph [ref=e25]: Instituto da Beleza Goiana de Ensino e Serviços LTDA
+        - paragraph [ref=e26]: "CNPJ: 19.367.067/0001-97"
